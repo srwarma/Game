@@ -1,0 +1,36 @@
+# put your full docker-compose config here (if used)
+
+version: '3'
+services:
+    db_postgresql:
+        image:  postgres:11.5 
+        restart: always
+        volumes:
+            - ../../data/database:/var/lib/postgresql/data
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "10m"
+                max-file: "3"
+    banana_app:
+        build: .
+        volumes: 
+            - static:/docker/code/static
+            - .:/code
+        depends_on:
+            - db_postgres
+    nginx:
+        image: nginx:1.15
+        ports:
+            - 80:80
+        volumes:
+            - /DEF1/etc/nginx/nginx.conf
+            - static:/code/static
+            - /DEF1/data/database
+volumes:
+    .:
+    postgres_data:
+    static:
+
+ 
+ 

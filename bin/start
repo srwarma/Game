@@ -1,0 +1,3 @@
+#!/bin/bash
+docker-compose -up -f /../etc/docker/docker-compose.yml
+#docker-compose -up -f /etc/docker/docker-compose.yml
