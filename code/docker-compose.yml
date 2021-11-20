@@ -3,13 +3,12 @@ services:
   app:
     build: .
     volumes:
-      - ./..:/code
+      - .:/juego
     ports:
       - 8000:8000
     image: app:juego
-    container_name: juego_container2
+    container_name: juego_container
     command: python manage.py runserver 0.0.0.0:8000
-
 
 
 

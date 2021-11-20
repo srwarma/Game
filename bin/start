@@ -1,3 +1,7 @@
 #!/bin/bash
-docker-compose -up -f /../etc/docker/docker-compose.yml
+#docker-compose -f ./../etc/docker/docker-compose.yml up --build
 #docker-compose -up -f /etc/docker/docker-compose.yml
+#buenaaa##
+docker-compose -f ./../code/docker-compose.yml up --build
+#docker-compose up -d --build 
+#docker-compose exec app python3 manage.py migrate --noinput
