@@ -4,6 +4,8 @@ ENV PYTHONUNBUFFERED 1
 #RUN mkdir /code
 WORKDIR /code
 COPY . /code/
+RUN pip install gunicorn 
 RUN pip install -r requirements.txt
 CMD ["gunicorn"  , "-b", "0.0.0.0:8000", "app:app"]
+#bueno#CMD ["gunicorn", "--bind", ":8000", "tic_tac_toe.wsgi:application"]
 #CMD [ "gunicorn", "-c", "./../gunicorn/conf.py", "--bind", ":80", "--chdir", "/../../code","manage.py:application" ]
