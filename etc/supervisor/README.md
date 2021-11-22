@@ -1,0 +1,2 @@
+supervisorctl reread
+supervisorctl update
