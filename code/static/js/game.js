@@ -165,7 +165,15 @@ function checkWinner(winArray,player){
     }
     return(win)
 }
-
+function ComputerMove(player, gameBoard){
+    if (player=="X"){player="O"}else{player="X"}
+    for (var board of gameBoard){
+        if (board==-1){
+            make_move(message["board"], message["player"])
+            break;
+        }
+    }
+}
 
 
 function connect() {
@@ -201,7 +209,8 @@ function connect() {
                 if(message["player"] != char_choice){
                     make_move(message["index"], message["player"])
                     myturn = true;
-                    document.getElementById("alert_move").style.display = 'inline';        
+                    document.getElementById("alert_move").style.display = 'inline';   
+                    ComputerMove(player, gameBoard)     
                 }
                 break;
             default:
