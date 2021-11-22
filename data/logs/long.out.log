@@ -109,3 +109,8 @@ Attaching to juego_container
 [36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:50182]
 [36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:62121]
 [36mjuego_container |[0m HTTP GET /static/css/main.css 304 [0.01, 89.29.186.21:62121]
+[36mjuego_container |[0m Invalid HTTP_HOST header: 'example.com'. You may need to add 'example.com' to ALLOWED_HOSTS.
+[36mjuego_container |[0m Bad Request: http://example.com/
+[36mjuego_container |[0m HTTP GET http://example.com/ 400 [0.09, 45.148.10.241:55288]
+[36mjuego_container |[0m Not Found: /config/getuser
+[36mjuego_container |[0m HTTP GET /config/getuser?index=0 404 [0.02, 209.141.34.220:56024]
