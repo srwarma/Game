@@ -10,4 +10,4 @@ COPY . .
 
 # Gunicorn
 #CMD ["gunicorn", "--bind", ":8000", "tic_tac_toe.wsgi:application"]
-CMD [ "python3", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD [ "python3", "manage.py", "runserver", "0.0.0.0:80"]
