@@ -25,7 +25,7 @@ SECRET_KEY = '%4nt#t6fw&d1%3abpe02$e5(#c8e9p%-v=doal8cg3y^wo5j2l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3c7777d.online-server.cloud']
+ALLOWED_HOSTS = ['3c7777d.online-server.cloud','87.106.124.244']
 
 
 # Application definition
