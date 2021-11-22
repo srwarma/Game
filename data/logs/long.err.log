@@ -1,0 +1,9 @@
+.FileNotFoundError: [Errno 2] No such file or directory: '././../code/docker-compose.yml'
+.FileNotFoundError: [Errno 2] No such file or directory: '././../code/docker-compose.yml'
+.FileNotFoundError: [Errno 2] No such file or directory: '././../code/docker-compose.yml'
+.FileNotFoundError: [Errno 2] No such file or directory: '././../code/docker-compose.yml'
+Building app
+Starting juego_container ... 
+[1A[2KStarting juego_container ... [32mdone[0m[1BBuilding app
+Starting juego_container ... 
+[1A[2KStarting juego_container ... [32mdone[0m[1B
