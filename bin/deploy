@@ -1,4 +1,8 @@
 #!/bin/bash
+#
 /opt/Game/bin/stop
-git commit -m "update"
-git push 
+#./stop
+git pull
+docker-compose run juego_container /opt/Game/code/manage.py migrate
+
+/opt/Game/bin/start
