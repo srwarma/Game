@@ -9,12 +9,12 @@ class TicTacToeConsumer(AsyncJsonWebsocketConsumer):
     def make_logDB(self, winner, roomID):
         con = sqlite3.connect('example.db')
         cur = con.cursor()
-        sql2 = 'CREATE TABLE IF NOT EXISTS projects (id integer PRIMARY KEY,winner text NOT NULL,roomID integer,time datetime);'
+        sql2 = 'CREATE TABLE IF NOT EXISTS projects (id integer PRIMARY KEY,winner text NOT NULL,roomID integer,time text);'
         cur.execute(sql2)
         con.commit()
 
         sql = "INSERT INTO logs (winner, roomID, time) VALUES (%s, %s, %s)"
-        val = (winner,roomID,datetime.datetime.now())
+        val = (winner,roomID,"time")
         cur.execute(sql, val)
         con.commit()
         con.close()
