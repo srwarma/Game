@@ -15,7 +15,7 @@ def index(request):
 
 def game(request, room_code):
     choice = request.GET.get("choice")
-    if choice not in ['X', 'O']:
+    if choice not in ['X', 'O', "Y"]:
         raise Http404("Choice does not exists")
     context = {
         "char_choice": choice, 

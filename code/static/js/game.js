@@ -26,8 +26,12 @@ for (var i = 0; i < elementArray.length; i++){
             }
             else{
                 myturn = false;
-                document.getElementById("alert_move").style.display = 'none'; // Hide          
-                make_move(index, char_choice);
+                document.getElementById("alert_move").style.display = 'none'; // Hide  
+
+                if (char_choice=="Y"){ //mod 1 player
+                    make_move(index, "X");
+                    ComputerMove()
+                }else{make_move(index, char_choice);}
             }
         }
     })
@@ -165,13 +169,14 @@ function checkWinner(winArray,player){
     }
     return(win)
 }
-function ComputerMove(player, gameBoard){
-    if (player=="X"){player="O"}else{player="X"}
+function ComputerMove(){
+    var counter = -1
     for (var board of gameBoard){
+        counter+=1
         if (board==-1){
-            make_move(message["board"], message["player"])
+            make_move(counter, "O")
             break;
-        }
+            }
     }
 }
 
@@ -197,6 +202,7 @@ function connect() {
         data = data["payload"];
         let message = data['message'];
         let event = data["event"];
+        
         switch (event) {
             case "START":
                 reset();
@@ -209,8 +215,7 @@ function connect() {
                 if(message["player"] != char_choice){
                     make_move(message["index"], message["player"])
                     myturn = true;
-                    document.getElementById("alert_move").style.display = 'inline';   
-                    ComputerMove(player, gameBoard)     
+                    document.getElementById("alert_move").style.display = 'inline';      
                 }
                 break;
             default:
