@@ -36,7 +36,9 @@ for (var i = 0; i < elementArray.length; i++){
         }
     })
 }
-
+function make_log(winner){
+    
+}
 function make_move(index, player){
     
 
@@ -82,7 +84,8 @@ function make_move(index, player){
             if (player=="X"){var player2="O"}else{var player2="X"}
             data = {
                 "event": "END",
-                "message": `Player ${player} won. Player ${player2} lost.  Play again?`
+                "message": `Player ${player} won. Player ${player2} lost.  Play again?`,
+                "winner": '${player}'
             }
             gameSocket.send(JSON.stringify(data))
         }
