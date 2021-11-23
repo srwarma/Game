@@ -13,7 +13,7 @@ class TicTacToeConsumer(AsyncJsonWebsocketConsumer):
         cur.execute(sql2)
         con.commit()
 
-        sql = "INSERT INTO logs (winner, roomID, time) VALUES (%s, %s)"
+        sql = "INSERT INTO logs (winner, roomID, time) VALUES (%s, %s, %s)"
         val = (winner,roomID,datetime.datetime.now())
         cur.execute(sql, val)
         con.commit()
