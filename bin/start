@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#detach##docker-compose -f ./../code/docker-compose.yml up -d --build
+#detach##
+docker-compose -f ./../code/docker-compose.yml up -d --build
 #
-#
-docker-compose -f /opt/Game/code/docker-compose.yml up --build
+#docker-compose -f /opt/Game/code/docker-compose.yml up --build
