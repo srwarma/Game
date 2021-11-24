@@ -1,21 +1,22 @@
 import json
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
 import sqlite3
-import datetime
 
+from datetime import datetime
 
 class TicTacToeConsumer(AsyncJsonWebsocketConsumer):
 
     def make_logDB(self, winner, roomID):
-        con = sqlite3.connect('example.db')
+        con = sqlite3.connect('db.sqlite3')
         cur = con.cursor()
-        sql2 = 'CREATE TABLE IF NOT EXISTS projects (id integer PRIMARY KEY,winner text NOT NULL,roomID integer,time text);'
+        sql2 = 'CREATE TABLE IF NOT EXISTS logs (id integer PRIMARY KEY,winner text NOT NULL,roomID text,time datetime);'
         cur.execute(sql2)
         con.commit()
-
-        sql = "INSERT INTO logs (winner, roomID, time) VALUES (%s, %s, %s)"
-        val = (winner,roomID,"time")
-        cur.execute(sql, val)
+        now=datetime.now()
+        time = now.strftime("%Y/%m/%d %H:%M:%S")
+        sql = "INSERT INTO logs ('winner', 'roomID', 'time') VALUES (?,?,?)"
+        val = (str(winner),str(roomID),time)
+        cur.execute(sql,val)
         con.commit()
         con.close()
 
